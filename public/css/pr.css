@@ -1,0 +1,86 @@
+span.bold-red {
+    color:              red;
+    font-weight:        bold;
+}
+p, span, h1, h2, h3, h4, h5, h6, button{
+    color:              black;
+}
+p{
+    font-size:          11pt;
+    font-family:        'Calibri','Helvetica Nueue', Helvetica, Arial, sans-serif;
+}
+strong, span{
+    font-size:          11pt;
+}
+.h1, h1{
+    font-weight:        bold;
+}
+.h3, h3{
+    font-size:          14px;
+    font-weight:        bold;
+}
+button{
+    width:              65px;
+    align-items:        flex-start;
+    cursor:             default;
+    color:              buttontext;
+    background-color:   buttonface;
+    box-sizing:         border-box;
+    padding:            2px 6px 3px;
+    border-width:       2px;
+    border-style:       outset;
+    border-color:       buttonface;
+    border-image:       initial;
+
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    margin: 0em 0em 0em 0em;
+    font: 13.3333px Arial;
+}
+.page-header{    
+    border:             none;
+    padding:            0px;
+    margin:             0px;
+}
+#page-wrapper{
+    width:              960px;
+}
+#loadReport{
+    background:         rgba(255, 255, 255, 0.5);
+    width:              960px;
+    padding:            0px 200px;
+    height:             100%;
+    top:                115px;
+    text-align:         right;
+    position:           fixed;
+    z-index:            1;
+}
+#spinningState{
+    margin-top:         200px;
+    text-align:         center;
+    border:             1px solid whitesmoke;
+    background:         white;
+}
+#spinningState #spinningStateText, #spinningState #spinningStateButton{
+    margin:             10px;
+}
+.list-group{
+    margin-bottom:      0px;
+}
+.panel{
+    background-color:   #efefef;
+}
+.panel-heading{
+    padding:            5px 15px;
+}
+.panel-default > .panel-heading{
+    background-color:   darkgray;
+}
+.buttonReportDiv{
+    text-align:         center;
+}
