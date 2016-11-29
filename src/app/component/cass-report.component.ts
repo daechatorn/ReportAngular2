@@ -59,6 +59,8 @@ export class CassReportComponent implements OnInit{
             this.cassReportSvc.sendCriteria(this.criteriaRpt);
             this.reportPanel.initial(this.customer.customerId, this.reportNm, this.criteriaRpt, "processing");
             this.showSpinning = true;
+        }else{
+            console.log("Cann't Pass validate");
         }
     }
 

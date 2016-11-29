@@ -55,7 +55,7 @@ export function validateFinalMailDate(inputElement){
     return true;
 }
 
-export function validateRunMonth(inputElement){
+export function validateRunMonth(inputElement): boolean{
 
     var runMonthObj = (<HTMLSelectElement>inputElement.elements['runMonthSelect']);
     var runYearObj = (<HTMLSelectElement>inputElement.elements['runYearSelect']);
@@ -63,10 +63,11 @@ export function validateRunMonth(inputElement){
     if ( !this.validateSelectedRunMonth( inputElement, runMonthObj, runYearObj ) ){
         return false;
     }
+    return true;
 
 }
 
-export function validateSelectedRunMonth( inputForm, runMonthObj, runYearObj ){
+export function validateSelectedRunMonth( inputForm, runMonthObj, runYearObj ): boolean{
 
     var selectedRunMonth = runMonthObj.options[runMonthObj.selectedIndex].value;
     var selectedRunYear = runYearObj.options[runYearObj.selectedIndex].value;
