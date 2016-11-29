@@ -16,6 +16,10 @@ const appRoutes: Routes = [
     {
         path: 'cass-mail-report',
         component: CassReportComponent
+    },
+    {
+        path: 'carrier-postage-report',
+        component: CassReportComponent
     }
 ];
 

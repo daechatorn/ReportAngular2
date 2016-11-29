@@ -7,9 +7,10 @@ import {MenuService} from '../service/menu.service';
     templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit {
+    reportNm: string = "Home";
     menus: Menu[];
     errorMessage:string;
-
+    
     constructor(private menuService: MenuService){}
 
     ngOnInit():void {

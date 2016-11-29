@@ -15,6 +15,7 @@ import { DaterangeComponent } from './component/daterange.component';
 import { SpinningComponent } from './component/spinning.component';
 import { ReportPanelComponent } from './component/report-panel.component'; 
 import { CustomersComponent } from './component/customers.component';
+import { BreadcrumbComponent } from './component/breadcrumb.component';
 import { MenuService } from './service/menu.service';
 import { CustomerService } from './service/customer.service';
 import { StringReplacementPipe } from './utils/string-replacement.pipe';
@@ -36,6 +37,7 @@ import { LevelIndentPipe } from './utils/level-indent.pipe';
                    SpinningComponent,
                    ReportPanelComponent,
                    CustomersComponent,
+                   BreadcrumbComponent,
                    StringReplacementPipe,
                    LevelIndentPipe],
     bootstrap: [AppComponent],

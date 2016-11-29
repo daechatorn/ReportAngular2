@@ -61,3 +61,9 @@ export class Report {
         this.status = status;
     }
 }
+
+export class BreadCrumb {
+    level: number;
+    pageNm: string;
+    pageUrl: string;
+}

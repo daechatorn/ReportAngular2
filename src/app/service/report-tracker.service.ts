@@ -4,8 +4,7 @@ import {Report} from './data-transfer-object';
 
 @Injectable()
 export class ReportTrackerService{
-
-    static instance:ReportTrackerService;
+    
     reportsPanelList: Report[];
     sessionStorageNm: string = "reportTracker";
 
