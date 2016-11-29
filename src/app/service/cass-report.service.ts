@@ -14,13 +14,13 @@ import 'rxjs/add/operator/catch';
 export class CassReportService {
     
     constructor (private http: Http) {}
-    private url = getAppCfg().POSTAL_REPORT_URL + "prservice/report";
+    private url = getAppCfg().POSTAL_REPORT_URL + "prservice/reports";
 
     sendCriteria(criteria: CriteriaRpt) {
         let body = JSON.stringify(criteria);
         let token = getCookie("web_session_id");
         let headers = new Headers({ 'Content-Type': 'application/json',
-                                    'web-session-id': token});
+                                    'web_session_id': token});
         var options = new RequestOptions({
             headers: headers
         });

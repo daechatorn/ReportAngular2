@@ -21,8 +21,8 @@ class Month {
 export class RunMonthComponent implements OnInit{
     months: Month[];
     years: Number[];
-    monthSelected: Number;
-    yearSelected: Number;
+    monthSelected: string;
+    yearSelected: string;
     @Output()
     runMonthNotification = new EventEmitter<RunMonth>();
 
@@ -35,8 +35,8 @@ export class RunMonthComponent implements OnInit{
                        {'monthId': 11, 'monthName': 'Nov'}, {'monthId': 12, 'monthName': 'Dec'}];
         let currentYear = new Date().getFullYear();
         this.years = [currentYear - 2, currentYear - 1, currentYear, currentYear + 1 ];
-        this.yearSelected = currentYear;
-        this.monthSelected = new Date().getMonth();
+        this.yearSelected = currentYear+"";
+        this.monthSelected = (new Date().getMonth())+"";
     }
     getRunMonthValue(): RunMonth {
         var runMonth = {"monthId": this.monthSelected, "year": this.yearSelected};
