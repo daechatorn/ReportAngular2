@@ -8,19 +8,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home.component';
 import { BreadCrumbService } from './service/breadcrumb.service';
 import { CassReportService } from './service/cass-report.service';
-import { ReportTrackerService } from './service/report-tracker.service';
+import { ReportService } from './service/report.service';
 import { CassReportComponent } from './component/cass-report.component';
 import { RunMonthComponent } from './component/runmonth.component';
 import { DaterangeComponent } from './component/daterange.component';
 import { SpinningComponent } from './component/spinning.component';
-import { ReportPanelComponent } from './component/report-panel.component'; 
+import { ProgressBarReportComponent } from './component/progressbar-report.component'; 
 import { CustomersComponent } from './component/customers.component';
 import { MenuService } from './service/menu.service';
 import { CustomerService } from './service/customer.service';
 import { StringReplacementPipe } from './utils/string-replacement.pipe';
 import { LevelIndentPipe } from './utils/level-indent.pipe';
-
-
 
 
 @NgModule({
@@ -34,11 +32,11 @@ import { LevelIndentPipe } from './utils/level-indent.pipe';
                    RunMonthComponent,
                    DaterangeComponent,
                    SpinningComponent,
-                   ReportPanelComponent,
+                   ProgressBarReportComponent,
                    CustomersComponent,
                    StringReplacementPipe,
                    LevelIndentPipe],
     bootstrap: [AppComponent],
-    providers: [BreadCrumbService, MenuService, CustomerService, CassReportService, ReportTrackerService]
+    providers: [BreadCrumbService, MenuService, CustomerService, CassReportService, ReportService]
 })
 export class AppModule {}

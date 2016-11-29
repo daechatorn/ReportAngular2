@@ -69,32 +69,6 @@ button{
 #spinningState #spinningStateText, #spinningState #spinningStateButton{
     margin:             10px;
 }
-
-.scrollbar{
-	max-height: 150px;
-	background: #F5F5F5;
-    overflow-y: scroll;
-    margin-bottom: 30px;
-}
-
-#loadReportList::-webkit-scrollbar-track{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
-
-#loadReportList::-webkit-scrollbar{
-	width: 12px;
-	background-color: #F5F5F5;
-}
-
-#loadReportList::-webkit-scrollbar-thumb{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #b2b8bc;
-}
-
-
 .list-group{
     margin-bottom:      0px;
 }
@@ -109,39 +83,4 @@ button{
 }
 .buttonReportDiv{
     text-align:         center;
-}
-
-/*report panel*/
-.rowReportPanel{
-    padding:            10px;
-    border:             1px solid #eee;
-    border-left-width:  5px;
-    border-radius:      3px;
-
-}
-button.showReportPanelLink{
-    width: 140px;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-bottom: 10px;
-    background: darkgray;
-    border-color: darkgray;
-    font-size: 11px;
-}
-
-.pending, .processing{
-    border-left-color:rgb(255, 110, 0);
-     color:rgb(255, 110, 0);
-}
-.complete{
-    border-left-color:rgb(168,180,0);
-    color:rgb(168,180,0);
-}
-.paused{
-    border-left-color:rgb(0, 164, 212);
-    color:rgb(0, 164, 212);
-}
-.failed{
-    border-left-color:rgb(169, 8, 8);
-    color:rgb(169, 8, 8);
 }

@@ -1,10 +1,10 @@
-<a href="home"><strong>Home</strong></a>
 <spinning [showSpin]=showSpinning  (closeSpin)="closeSpinning($event)" ></spinning>
+<progressbar-report></progressbar-report>
 <div class="content_center Criteria">
 <input type="hidden" id="reportSubmittedValue" name="reportSubmittedValue"/>
 <input type="hidden" id="reportType" name="reportType"/>
 <input type="hidden" id="reportName" name="reportName" value="MeteredPostage"/>
-<form class="input_form">
+<form>
 	<div *ngIf="isFromDtPatternError">
 		<span class="bold-red">the date format at "From:" should be "MM/DD/YYYY"</span>
 	</div>
@@ -25,13 +25,13 @@
 					<div class="col-md-12"><span class="col-md-12">Customer</span></div>
 					<div class="col-md-12">&nbsp;</div>
 					<div class="col-md-12">
-						<customers class="col-md-6" (customerNotification)="onCustomerNotify($event)"></customers>
+							<customers class="col-md-6" (customerNotification)="onCustomerNotify($event)"></customers>
 					</div>
 				</div>
 				<div class="panel-heading fixed-panel-heading row"><strong>Report Range</strong></div>
 				<div class="panel-body fixed-panel row">
 					<div class="col-md-6">
-						<div class="col-md-12"><input type="radio" value="R" name="dateType" checked /><span> Run Month</span></div>
+						<div class="col-md-12"><input type="radio" value="R" name="dateType"/><span> Run Month</span></div>
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-12">
 							<runmonth (runMonthNotification)="onRunMonthNotify($event)"></runmonth>
@@ -41,7 +41,7 @@
 						<div class="col-md-12"><input type="radio" value="F" name="dateType"/><span> Final Mail Date</span></div>
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-12">
-							<daterange (dateRangeNotification)="onDateRangeNotify($event)"></daterange>
+									<daterange (dateRangeNotification)="onDateRangeNotify($event)"></daterange>
 						</div>
 					</div>
 				</div>
