@@ -1,5 +1,5 @@
 {
-  "name": "PostalReport",
+  "name": "ReportAngular2",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.local.js --inline --progress --port 8085",
