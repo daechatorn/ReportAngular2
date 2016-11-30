@@ -7,7 +7,7 @@ import {CustomerService} from '../service/customer.service';
     template: `
                 <select id="customerId" name="customerId" 
                         (change)="onSelectCustomer($event)" style="width:250px;">
-                    <option value=""> All Customers </option>
+                    <option value="1"> All Customers </option>
                     <option *ngFor="let customer of customers" [value]="customer?.customerId" >
                         <span [innerHTML]="customer?.customerName | level_indent: customer?.level"></span>
                     </option>

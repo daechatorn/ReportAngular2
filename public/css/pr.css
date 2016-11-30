@@ -43,8 +43,15 @@ button{
     font: 13.3333px Arial;
 }
 
-.breadcrumb{
-    margin: 0px 10px;
+ol.breadcrumbOl{
+    margin: 0px;
+    padding: 0px 12px;
+}
+ol.breadcrumbOl > li{
+    display: inline;
+}
+ol.breadcrumbOl > li > span > a, ol.breadcrumbOl > li > a{
+    text-decoration: none;
 }
 
 .page-header{    

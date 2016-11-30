@@ -7,7 +7,7 @@ import {MenuService} from '../service/menu.service';
     templateUrl: 'home.component.html'
 })
 export class HomeComponent implements OnInit {
-    reportNm: string = "Home";
+    reportNm: string = "Postal Reports";
     menus: Menu[];
     errorMessage:string;
     

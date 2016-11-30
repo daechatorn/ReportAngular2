@@ -6,11 +6,12 @@ import {BreadCrumbService} from '../service/breadcrumb.service';
 
 @Component({
     selector: 'breadcrumb',
-    template: `<ol class="breadcrumb"> 
+    template: `<ol class="breadcrumbOl">
+                    <li><span><a href="#">Postal Home ></a></span></li>
                     <li *ngFor="let item of breadCrumbList; let i = index" >
                         <a *ngIf="!(breadCrumbList.length-1)==i"   
                          href="{{item.pageUrl}}">
-                            {{item.pageNm}}
+                            {{item.pageNm}} >
                         </a>
                         <span *ngIf="(breadCrumbList.length-1)==i"> {{item.pageNm}} </span>
                     </li> 
