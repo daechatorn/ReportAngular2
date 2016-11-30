@@ -10,7 +10,7 @@ const SEPARATOR: string = "/";
 		    	<div class="row">
 			    	<div class="col-md-2">From:</div>
 			    	<div class="col-md-6">
-	    				<input type="text" id="fromDt" name="fromDt" [value]="fromDt" (focusout)="onFromDtChange($event.target.value)" />
+	    				<input type="date" id="fromDt" name="fromDt" [value]="fromDt" (focusout)="onFromDtChange($event.target.value)" />
 			    	</div>
 		    	</div>
 		    	<div class="row">
@@ -19,7 +19,7 @@ const SEPARATOR: string = "/";
 		    	<div class="row">
 			    	<div class="col-md-2">To:</div>
 			    	<div class="col-md-6">
-	    				<input type="text" id="toDt" name="toDt" [value]="toDt" (focusout)="onToDtChange($event.target.value)"/>
+	    				<input type="date" id="toDt" name="toDt" [value]="toDt" (focusout)="onToDtChange($event.target.value)"/>
 			    	</div>
 		    	</div>
     `
