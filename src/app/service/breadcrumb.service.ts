@@ -10,21 +10,21 @@ export class BreadCrumbService {
 
     constructor() {
         if(BreadCrumbService._instance !== undefined) {
-            throw new TypeError("This class is defined as a Singleton, please use GetInstance instead of constructing a new object.");
+            throw new TypeError("This class is defined as a Singleton, please use getInstance instead of constructing a new object.");
         }
 
         BreadCrumbService._instance = this;
         this.breadCrumbList = [];
     }
 
-    public static GetInstance(): BreadCrumbService {
+    public static getInstance(): BreadCrumbService {
         return BreadCrumbService._instance;
     } 
 
     getBreadCrumbs(): Promise<BreadCrumb[]> {
-         var breadCrumbTrackers = JSON.parse(window.sessionStorage.getItem(this.sessionStorageNm));
-         if(breadCrumbTrackers != null){
-            this.breadCrumbList =  breadCrumbTrackers;
+         var breadCrumbs = JSON.parse(window.sessionStorage.getItem(this.sessionStorageNm));
+         if(breadCrumbs != null){
+            this.breadCrumbList =  breadCrumbs;
          }else{
              this.breadCrumbList = [];
          }
@@ -33,11 +33,9 @@ export class BreadCrumbService {
     
     regisBreadCrumb(breadCrumb: BreadCrumb): void{
         if(breadCrumb != null){
-
             if(breadCrumb.level == 0){
                 this.breadCrumbList = [];
             }
-
             if(this.isExistsInBreadCrumb(breadCrumb)){
                 this.breadCrumbList.push(breadCrumb);
             }

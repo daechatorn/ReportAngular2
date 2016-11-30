@@ -51,8 +51,18 @@ export function validateFinalMailDate(inputElement){
     if(isValidDate(toDtElement.value)){
         return this.warnInvalid(toDtElement, "The date format at \"To:\" should be \"MM/DD/YYYY\".");
     }
+    if(isFutureDate(fromDtElement.value, toDtElement.value)){
+        return this.warnInvalid(fromDtElement, "From date must be less than or equal to date.");
+    }
     
     return true;
+}
+
+export function isFutureDate(fromDt, toDt){
+    var fromDate = new Date(fromDt);
+    var toDate = new Date(toDt);
+    console.log(fromDate+", "+toDate+" ::: "+(fromDate > toDate));
+    return (fromDate > toDate);
 }
 
 export function validateRunMonth(inputElement): boolean{

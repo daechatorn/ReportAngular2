@@ -33,11 +33,6 @@ export class CassReportComponent implements OnInit{
         this.reportPanel = new Report();
         this.customer = new Customer();
     }
-
-    validateDateRange() {
-        //this.isFromDtPatternError = isValidDate(this.dateRange.fromDt);
-        //this.isToDtPatternError = isValidDate(this.dateRange.toDt);
-    }
     onCustomerNotify(value) {
         this.customer.customerId = value;
     }

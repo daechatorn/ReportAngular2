@@ -5,15 +5,9 @@
 <input type="hidden" id="reportType" name="reportType"/>
 <input type="hidden" id="reportName" name="reportName" value="MeteredPostage"/>
 <form class="input_form">
-	<div *ngIf="isFromDtPatternError">
-		<span class="bold-red">the date format at "From:" should be "MM/DD/YYYY"</span>
-	</div>
-	<div *ngIf="isToDtPatternError">
-		<span class="bold-red">the date format at "To:" should be "MM/DD/YYYY"</span>
-	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<h1>CASS Mail Report</h1>
+			<h1>{{reportNm}}</h1>
 			<hr>
 		</div>
 	</div>
