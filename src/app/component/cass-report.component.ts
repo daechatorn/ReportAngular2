@@ -5,6 +5,8 @@ import {CassReportService} from '../service/cass-report.service';
 import {ReportTrackerService} from '../service/report-tracker.service';
 import {validate} from '../utils/report-criteria';
 
+declare var jQuery:any;
+
 @Component({
     templateUrl: 'cass-report.component.html'
 })
@@ -23,6 +25,8 @@ export class CassReportComponent implements OnInit{
     }
 
     ngOnInit():void {
+        //jQuery("CCC").val();
+        
         let now = new Date();
         this.runMonth = new RunMonth();
         this.runMonth.monthId = now.getMonth()+"";
