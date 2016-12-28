@@ -1,6 +1,7 @@
 import {Component, Output, EventEmitter, OnInit} from '@angular/core';
 import {Customer} from '../service/data-transfer-object';
 import {CustomerService} from '../service/customer.service';
+import {SpinningWaitService} from '../service/spinning-wait.service';
 
 @Component({
     selector: 'customers',
@@ -21,15 +22,21 @@ export class CustomersComponent implements OnInit {
     errorMessage:string;
 
     @Output()
-    customerNotification = new EventEmitter()
+    customerNotification = new EventEmitter();
 
     constructor(private customerService: CustomerService){}
 
     ngOnInit(): void{
+        var spinning = SpinningWaitService.getInstance();
+        spinning.isFinishLoad(false);
         this.customerId = 'ALL';
         this.customerService.getCustomers()
-            .subscribe(response=>this.customers=response,
-                    error=>this.errorMessage=<any>error
+            .subscribe(
+                        response=>this.customers=response,
+                        error=>this.errorMessage=<any>error,
+                        function() {
+                            spinning.isFinishLoad(true);
+                        }
                     );
     }
 
@@ -42,5 +49,4 @@ export class CustomersComponent implements OnInit {
         }   
         this.customerNotification.emit(this.customerId);
     }
-    
 }

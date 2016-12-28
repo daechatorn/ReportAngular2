@@ -7,6 +7,11 @@ export class Menu {
     displayDesc: string;
 }
 
+export class Facility {
+    facilityCd: string;
+    facilityName: string;
+}
+
 export class Customer {
     customerId: string;
     customerName: string;
@@ -19,16 +24,16 @@ export class RunMonth {
 }
 
 export class DateRange {
-    fromDt: string;
-    toDt: string;
+    fromDt: Date;
+    toDt: Date;
 }
 
 export class CriteriaRpt {
     reportNm: string;
     customerId: string;
     customerName: string;
-    fromDt: string;
-    toDt: string;
+    fromDt: Date;
+    toDt: Date;
     runMonth: string;
     runYear: string;
     reportType: string;

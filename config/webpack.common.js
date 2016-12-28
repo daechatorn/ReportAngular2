@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
@@ -28,10 +29,6 @@ module.exports = {
         loader: 'html'
       },
       {
-        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file?name=assets/[name].[hash].[ext]'
-      },
-      {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
@@ -49,16 +46,13 @@ module.exports = {
       name: ['app', 'vendor', 'polyfills'],
       minChunks: 2
     }),
-
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: true
     }),
-
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery',
-      jquery: 'jquery'
-    })
+    new CopyWebpackPlugin([
+         { from: 'src/assets/image', to: './assets/image'}
+      ]
+    )
   ]
 };

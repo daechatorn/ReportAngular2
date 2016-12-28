@@ -9,7 +9,8 @@ const ENV = 'LOCAL';
 const METADATA = webpackMerge(commonConfig.metadata, {
   'ENV': ENV,
   'POSTAL_REPORT_URL': "http://localhost:10010/",
-  'VERSION': '1.0.0'
+  'VERSION': "1.0.0",
+  'CONTEXT_ROOT' : ""
 });
 
 module.exports = webpackMerge(commonConfig, {
@@ -30,7 +31,8 @@ module.exports = webpackMerge(commonConfig, {
       'appCfg.env': {
         'ENV': JSON.stringify(METADATA.ENV),
         'POSTAL_REPORT_URL': JSON.stringify(METADATA.POSTAL_REPORT_URL),
-        'VERSION': JSON.stringify(METADATA.VERSION)
+        'VERSION': JSON.stringify(METADATA.VERSION),
+        'CONTEXT_ROOT':JSON.stringify(METADATA.CONTEXT_ROOT)
       }
     })
   ],

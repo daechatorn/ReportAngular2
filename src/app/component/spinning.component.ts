@@ -1,10 +1,11 @@
 import {Component, Input, Output, OnChanges, EventEmitter} from '@angular/core';
+import {getBaseUrl} from '../utils/utility-functions';
 
 @Component({
     selector: 'spinning',
     template: `<div id="loadReport" *ngIf="showSpin">
                 <div id="spinningState">
-                    <img src="../../../public/image/Report-Activity-Graphic_BR-172x182.gif" />
+                    <img src="{{baseUrl}}assets/image/Report-Activity-Graphic_BR-172x182.gif" />
                     <div id="spinningStateText">
                             Your report is currently processing. 
                             Last checked at 11/21/2016 00:04:44 PST Pacific Time. 
@@ -22,6 +23,8 @@ export class SpinningComponent{
 
     @Input() showSpin: boolean;
     @Output() closeSpin = new EventEmitter();
+
+    baseUrl = getBaseUrl();
 
     closeSpinning(): void{
         this.closeSpin.emit(true);

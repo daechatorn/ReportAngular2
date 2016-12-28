@@ -7,7 +7,7 @@ import {BreadCrumbService} from '../service/breadcrumb.service';
 @Component({
     selector: 'breadcrumb',
     template: `<ol class="breadcrumbOl">
-                    <li><span><a href="#">Postal Home ></a></span></li>
+                    <li><span><a href="javascript: goBackToCP('DefaultController');">Postal Home ></a></span></li>
                     <li *ngFor="let item of breadCrumbList; let i = index" >
                         <a *ngIf="!(breadCrumbList.length-1)==i"   
                          href="{{item.pageUrl}}">
@@ -21,7 +21,7 @@ import {BreadCrumbService} from '../service/breadcrumb.service';
 
 export class BreadcrumbComponent implements OnInit{
     breadCrumbList: BreadCrumb[];
-
+    
     @Input() levelBreadCrumb: number;
     @Input() reportNm: string;
 

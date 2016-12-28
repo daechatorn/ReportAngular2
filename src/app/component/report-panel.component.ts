@@ -5,10 +5,9 @@ import {ReportTrackerService} from '../service/report-tracker.service';
 @Component({
     selector: 'report-panel',
     template: `<div class="showReportPanelLink" *ngIf="reportsPanelList?.length > 0">
-                <button class="showReportPanelLink btn" (click)="showReportPanelAction()">
-                    <span *ngIf="showReportPanel" class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-                    <span *ngIf="!showReportPanel" class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> GENERATE HISTORY
-                </button>
+                <a (click)="showReportPanelAction()" href="javascript:void(0);" >
+                    Report history <span>({{reportsPanelList.length}})</span>
+                </a>
                 
                 <div id="loadReportList" class="scrollbar" *ngIf="showReportPanel" >
                     <div  id="callout-navs-tabs-plugin" *ngFor="let report of reportsPanelList" 

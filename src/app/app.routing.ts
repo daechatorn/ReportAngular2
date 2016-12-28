@@ -2,6 +2,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './component/home.component';
 import { CassReportComponent } from './component/cass-report.component';
+import { CarrierReportComponent } from './component/carrierpostage-report.component';
 
 const appRoutes: Routes = [
     {
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'carrier-postage-report',
-        component: CassReportComponent
+        component: CarrierReportComponent
     }
 ];
 

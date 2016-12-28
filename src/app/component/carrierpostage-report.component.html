@@ -1,0 +1,63 @@
+<breadcrumb [levelBreadCrumb]=1 [reportNm]=reportNm ></breadcrumb>
+<spinning [showSpin]=showSpinning  (closeSpin)="closeSpinning($event)" ></spinning>
+<div class="content_center Criteria">
+<input type="hidden" id="reportSubmittedValue" name="reportSubmittedValue"/>
+<input type="hidden" id="reportType" name="reportType"/>
+<input type="hidden" id="reportName" name="reportName" value="MeteredPostage"/>
+<form class="input_form">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>{{reportNm}}</h1>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default col-md-8" >
+				<div class="panel-heading fixed-panel-heading row"><strong>Customer Information</strong></div>
+				<div class="panel-body fixed-panel row">
+					<div class="col-md-6">
+						<div class="col-md-12"><span>Customer</span></div>
+						<div class="col-md-12">&nbsp;</div>
+						<div class="col-md-12">
+							<customers (customerNotification)="onCustomerNotify($event)" ></customers>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-12"><span>Facility</span></div>
+						<div class="col-md-12">&nbsp;</div>
+						<div class="col-md-12">
+							<facility [customerSeletected]=customer></facility>
+						</div>
+					</div>
+				</div>
+				<div class="panel-heading fixed-panel-heading row"><strong>Report Range</strong></div>
+				<div class="panel-body fixed-panel row">
+					<div class="col-md-6">
+						<div class="col-md-12"><input type="radio" value="R" name="dateType" checked /><span> Run Month</span></div>
+						<div class="col-md-12">&nbsp;</div>
+						<div class="col-md-12">
+							<runmonth (runMonthNotification)="onRunMonthNotify($event)"></runmonth>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-12"><input type="radio" value="F" name="dateType"/><span> Final Mail Date</span></div>
+						<div class="col-md-12">&nbsp;</div>
+						<div class="col-md-12">
+							<daterange (dateRangeNotification)="onDateRangeNotify($event)"></daterange>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="col-md-offset-4 col-md-4 col-md-offset-4 buttonReportDiv">
+				<button (click)="genReport()">Report</button>
+				<button (click)="genExcel()">Excel</button>
+			</div>
+		</div>
+	</div>
+</form>
+</div>

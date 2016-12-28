@@ -1,6 +1,11 @@
 import 'core-js/es6';
 import 'core-js/es7/reflect';
+
+//import 'systemjs/dist/system-polyfills';
+//import 'angular2-ie9-shims-master/test';
+
 require('zone.js/dist/zone');
+
 if (process.env.ENV === 'production') {
   // Production
 } else {
@@ -8,3 +13,5 @@ if (process.env.ENV === 'production') {
   Error['stackTraceLimit'] = Infinity;
   require('zone.js/dist/long-stack-trace-zone');
 }
+
+

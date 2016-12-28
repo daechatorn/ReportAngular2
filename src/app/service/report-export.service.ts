@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch';
 
 
 @Injectable()   
-export class CassReportService {
+export class ReportExportService {
     
     constructor (private http: Http) {}
     private url = getAppCfg().POSTAL_REPORT_URL + "prservice/reports";
@@ -24,7 +24,7 @@ export class CassReportService {
         var options = new RequestOptions({
             headers: headers
         });
-        console.log("send excel:" + body);
+        console.log("send report:" + body);
         console.log("host:" + window.location.hostname);
         this.http.post(this.url, body, options)
                  .map((res:Response) => res.json)

@@ -5,6 +5,7 @@ function isEmpty(s){
  // Validates that the input string is a valid date formatted as "mm/dd/yyyy"
 export function isValidDate(dateString)
 {
+    console.log("date ::: "+dateString);
     var regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/ ;
     return !regex.test(dateString);
 };
@@ -44,12 +45,6 @@ export function validateFinalMailDate(inputElement){
     if( toDtElement.value.length == 0  ) 
     {
         return this.warnInvalid(toDtElement, "Please enter a final mail date.");
-    }
-    if(isValidDate(fromDtElement.value)){
-        return this.warnInvalid(fromDtElement, "The date format at \"From:\" should be \"MM/DD/YYYY\".");
-    }
-    if(isValidDate(toDtElement.value)){
-        return this.warnInvalid(toDtElement, "The date format at \"To:\" should be \"MM/DD/YYYY\".");
     }
     if(isFutureDate(fromDtElement.value, toDtElement.value)){
         return this.warnInvalid(fromDtElement, "From date must be less than or equal to date.");
@@ -134,7 +129,7 @@ export function validateSearchBackTo13Months( inputForm, runMonthObj, runYearObj
     return true;
 }
 function isDigit (c){   
-    return ((c >= "0") && (c <= "9"))
+    return ((c >= "0") && (c <= "9"));
 }
 
 function isInteger (s){   

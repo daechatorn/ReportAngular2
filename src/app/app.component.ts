@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import '../../public/css/pr.css';
-import {getAppCfg} from '../../src/app/utils/utility-functions';
+import '../assets/css/pr.css';
+
+import {getCookie, getAppCfg} from '../../src/app/utils/utility-functions';
 
 @Component({
     selector: 'my-app',
@@ -11,6 +12,7 @@ export class AppComponent implements OnInit{
     
     ngOnInit(){
         this.loadScriptFooter();
+        //this.manageSessionStorage();
     }
 
     loadScriptFooter(): void {
@@ -26,5 +28,16 @@ export class AppComponent implements OnInit{
         script.appendChild(textScript);
         footer.appendChild(script);
     }
+	/*
+    manageSessionStorage(): void {
+        var webSessionId = getCookie("web_session_id");
+        var webSessionIdOnStorage = JSON.parse(window.sessionStorage.getItem("webSessionId"));
+        var reportTracker = JSON.parse(window.sessionStorage.getItem("reportTracker"));
+        if(webSessionIdOnStorage != null && reportTracker != null && webSessionId != webSessionIdOnStorage){
+            window.sessionStorage.removeItem("reportTracker");
+        }
+        window.sessionStorage.setItem("webSessionId", webSessionId);
+    }
+	*/
 }
 

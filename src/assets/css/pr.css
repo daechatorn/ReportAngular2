@@ -50,7 +50,7 @@ ol.breadcrumbOl{
 ol.breadcrumbOl > li{
     display: inline;
 }
-ol.breadcrumbOl > li > span > a, ol.breadcrumbOl > li > a{
+ol.breadcrumbOl > li > span > a, ol.breadcrumbOl > li > a, .showReportPanelLink > a{
     text-decoration: none;
 }
 
@@ -84,11 +84,15 @@ ol.breadcrumbOl > li > span > a, ol.breadcrumbOl > li > a{
 
 .scrollbar{
 	max-height: 150px;
-	background: #F5F5F5;
+	background: white;
     overflow-y: scroll;
     margin-bottom: 30px;
 }
+#loadReportList{
+    width: 350px;
+    border: 1px solid darkgray;
 
+}
 #loadReportList::-webkit-scrollbar-track{
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 10px;
@@ -129,22 +133,22 @@ ol.breadcrumbOl > li > span > a, ol.breadcrumbOl > li > a{
     border-left-width:  5px;
     border-radius:      3px;
 }
-div.showReportPanelLink{
-    margin-left: 12px;
-}
-button.showReportPanelLink{
-    width: 140px;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-bottom: 10px;
-    background: darkgray;
-    border-color: darkgray;
-    font-size: 11px;
-}
 
+div.showReportPanelLink{
+    z-index: 1;
+    position: absolute;
+    margin-left: 600px;
+    margin-right: 10px;
+}
+div.showReportPanelLink > a{
+    margin-left: 235px;
+}
+div.showReportPanelLink > a > span{
+    color: black;
+}
 .pending, .processing{
     border-left-color:rgb(255, 110, 0);
-     color:rgb(255, 110, 0);
+    color:rgb(255, 110, 0);
 }
 .complete{
     border-left-color:rgb(168,180,0);

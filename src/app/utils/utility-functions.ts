@@ -31,6 +31,10 @@ export function getAppCfg(): any{
     return appCfg.env;
 }
 
+export function getBaseUrl(): any{
+    return window.location.origin+'/'+getAppCfg().CONTEXT_ROOT;
+}
+
 export function formatDate(dateObj,format)
 {
     if(dateObj != null){
@@ -64,9 +68,17 @@ export function formatDate(dateObj,format)
             return curr_month+"/"+curr_date +"/"+curr_year+ " "+curr_hr+":"+curr_min+":"+curr_sc;       
         }
         else if(format == "yyyymmddhhmmss" ){ 
-            return (new Date(Date.now()-(dateObj).getTimezoneOffset() * 60000)).toISOString().slice(0, 19).replace(/[^0-9]/g, "");;
+            return (new Date(Date.now()-(dateObj).getTimezoneOffset() * 60000)).toISOString().slice(0, 19).replace(/[^0-9]/g, "");
         }
     }else{
         return null;
     }
+}
+
+export function parseStringToDate(dateString: string): Date {
+	if (dateString) {
+		return new Date(dateString);
+	} else {
+		return null;
+	}
 }
