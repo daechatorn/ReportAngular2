@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Report} from '../service/data-transfer-object';
 import {ReportTrackerService} from '../service/report-tracker.service';
+import {ReportExportService} from '../service/report-export.service';
 
 @Component({
     selector: 'report-panel',
@@ -32,13 +33,19 @@ export class ReportPanelComponent implements OnInit{
     reportsPanelList: Report[];
     rowPanelCSSClass: string = "rowReportPanel ";
     showReportPanel: boolean = true;
-    constructor(private reportTrackerService: ReportTrackerService){
+    constructor(private reportTrackerService: ReportTrackerService,
+                private reportExportService: ReportExportService){
     }
     
     ngOnInit(): void{
-        this.reportTrackerService.getReports().then(reports => this.reportsPanelList = reports);
+        this.reportTrackerService.getReports()
+            .then(
+                reports => (
+                    this.reportsPanelList = reports
+                )
+            );
     }
-
+    
     showReportPanelAction(): void{
         this.showReportPanel = !this.showReportPanel;
     }

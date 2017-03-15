@@ -10,7 +10,7 @@ const METADATA = webpackMerge(commonConfig.metadata, {
   'ENV': ENV,
   'POSTAL_REPORT_URL': "/PRSpa/",
   'VERSION': "1.0.0",
-  'CONTEXT_ROOT' : "/PRSpa/"
+  'CONTEXT_ROOT' : "PRSpa/"
 });
 
 module.exports = webpackMerge(commonConfig, {

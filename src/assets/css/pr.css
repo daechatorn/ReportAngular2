@@ -43,6 +43,10 @@ button{
     font: 13.3333px Arial;
 }
 
+#logoContainer{
+    width: auto !important;
+}
+
 ol.breadcrumbOl{
     margin: 0px;
     padding: 0px 12px;

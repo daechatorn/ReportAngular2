@@ -10,7 +10,7 @@ const SEPARATOR: string = "/";
 		    	<div class="row">
 			    	<div class="col-md-2">From:</div>
 			    	<div class="col-md-6">
-	    				<input type="date" id="fromDt" name="fromDt" [value]="fromDt" (focusout)="onFromDtChange($event.target.value)" />
+	    				<input type="date" id="fromDt" name="fromDt" [value]="fromDt | date:'yyyy-MM-dd'" (focusout)="onFromDtChange($event.target.value)" />
 			    	</div>
 		    	</div>
 		    	<div class="row">
@@ -19,7 +19,7 @@ const SEPARATOR: string = "/";
 		    	<div class="row">
 			    	<div class="col-md-2">To:</div>
 			    	<div class="col-md-6">
-	    				<input type="date" id="toDt" name="toDt" [value]="toDt" (focusout)="onToDtChange($event.target.value)"/>
+	    				<input type="date" id="toDt" name="toDt" [value]="toDt | date:'yyyy-MM-dd'" (focusout)="onToDtChange($event.target.value)"/>
 			    	</div>
 		    	</div>
     `
@@ -32,9 +32,9 @@ export class DaterangeComponent implements OnInit{
 
     ngOnInit():void {
         let now = new Date();
-		var month = leftPadNum(now.getMonth(), 2);
+		var month = parseInt(leftPadNum(now.getMonth(), 2))+1;
 		var currentDt = leftPadNum(now.getDate(), 2);
-        this.fromDt = parseStringToDate(month + SEPARATOR + "01" + SEPARATOR + now.getFullYear());
+        this.fromDt = parseStringToDate(month + SEPARATOR + currentDt + SEPARATOR + now.getFullYear());
 		this.toDt =  parseStringToDate(month + SEPARATOR + currentDt + SEPARATOR + now.getFullYear());
     }
 

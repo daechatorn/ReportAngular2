@@ -29,8 +29,6 @@ export class ReportTrackerService{
         }else{
             console.log("Please check your report ::: report is null");
         }
-        
     }
-    
-
+   
 }

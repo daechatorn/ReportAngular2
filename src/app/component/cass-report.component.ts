@@ -42,18 +42,33 @@ export class CassReportComponent implements OnInit{
     onDateRangeNotify(value) {
         this.dateRange = value;
     }
+    
     genExcel(){
         console.log("genExcel...");
+        var inputElement = (<HTMLFormElement>document.getElementsByClassName("input_form")[0]);
+        if(validate(inputElement)){
+            
+            this.setCriteria(inputElement, "Excel");
+            this.reportExportSvc.generateFile(this, this.criteriaRpt, this.showSpinning);
+            
+            ///this.reportPanel.initial(response, this.reportNm, this.criteriaRpt, "processing");
+            
+        }else{
+            console.log("Cann't Pass validate");
+        }
     }
+
     genReport(){
         console.log("genReport...");
         var inputElement = (<HTMLFormElement>document.getElementsByClassName("input_form")[0]);
-
+        
         if(validate(inputElement)){
+            
             this.setCriteria(inputElement, "Report");
-            this.reportExportSvc.sendCriteria(this.criteriaRpt);
-            this.reportPanel.initial(this.customer.customerId, this.reportNm, this.criteriaRpt, "processing");
-            this.showSpinning = true;
+            this.reportExportSvc.generateFile(this, this.criteriaRpt, this.showSpinning);
+            
+            ///this.reportPanel.initial(response, this.reportNm, this.criteriaRpt, "processing");
+            
         }else{
             console.log("Cann't Pass validate");
         }

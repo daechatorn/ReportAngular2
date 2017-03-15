@@ -1,2 +1,0 @@
-proxy="http://user:password@10.138.250.9:9119"
-rejectUnauthorized=false

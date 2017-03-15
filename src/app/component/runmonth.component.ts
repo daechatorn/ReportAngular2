@@ -1,7 +1,7 @@
 import {Component, Output, EventEmitter, OnInit} from '@angular/core';
 import {RunMonth} from '../service/data-transfer-object';
 class Month {
-    monthId: Number;
+    monthId: string;
     monthName: string
 }
 
@@ -27,12 +27,12 @@ export class RunMonthComponent implements OnInit{
     runMonthNotification = new EventEmitter<RunMonth>();
 
     ngOnInit():void {
-        this.months = [{'monthId': 1, 'monthName': 'Jan'}, {'monthId': 2, 'monthName': 'Feb'},
-                       {'monthId': 3, 'monthName': 'Mar'}, {'monthId': 4, 'monthName': 'Apr'},
-                       {'monthId': 5, 'monthName': 'May'}, {'monthId': 6, 'monthName': 'Jun'},
-                       {'monthId': 7, 'monthName': 'Jul'}, {'monthId': 8, 'monthName': 'Aug'},
-                       {'monthId': 9, 'monthName': 'Sep'}, {'monthId': 10, 'monthName': 'Oct'},
-                       {'monthId': 11, 'monthName': 'Nov'}, {'monthId': 12, 'monthName': 'Dec'}];
+        this.months = [{'monthId': '01', 'monthName': 'Jan'}, {'monthId': '02', 'monthName': 'Feb'},
+                       {'monthId': '03', 'monthName': 'Mar'}, {'monthId': '04', 'monthName': 'Apr'},
+                       {'monthId': '05', 'monthName': 'May'}, {'monthId': '06', 'monthName': 'Jun'},
+                       {'monthId': '07', 'monthName': 'Jul'}, {'monthId': '08', 'monthName': 'Aug'},
+                       {'monthId': '09', 'monthName': 'Sep'}, {'monthId': '10', 'monthName': 'Oct'},
+                       {'monthId': '11', 'monthName': 'Nov'}, {'monthId': '12', 'monthName': 'Dec'}];
         let currentYear = new Date().getFullYear();
         this.years = [currentYear - 2, currentYear - 1, currentYear, currentYear + 1 ];
         this.yearSelected = currentYear+"";

@@ -13,7 +13,7 @@ import {getBaseUrl} from '../utils/utility-functions';
                             using the Customer Portal Report Queue page. 
                     </div>
                     <div id="spinningStateButton">
-                        <button (click)='closeSpinning()' style="width:100px;"> Save for later </button>
+                        <button (click)='closeSpinning()' style="width:100px;display:none;"> Save for later </button>
                     </div>
                 </div>
             </div>`,
